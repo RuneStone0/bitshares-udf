@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, redirect
 from websocket import create_connection
 from flask_cors import CORS, cross_origin
 import json, datetime, time, calendar
@@ -331,7 +331,7 @@ def example():
 	symbol = request.args.get('symbol')
 	html = ""
 	if symbol == None:
-		return "no symbol parameter found. try ?symbol=BTC_CNY"
+		return redirect("/example?symbol=BTC_CNY")
 	else:
 		html = """<!DOCTYPE HTML><html><head>
 <!-- Fix for iOS Safari zooming bug -->
@@ -353,7 +353,7 @@ def example():
 			// debug: true, // uncomment this line to see Library errors and warnings in the console
 			fullscreen: false,
 			symbol: '"""+symbol+"""',
-			interval: 'D',
+			interval: '1D',
 			container_id: "tv_chart_container",
 
 			//	BEWARE: no trailing slash is expected in feed URL
