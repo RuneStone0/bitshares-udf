@@ -30,7 +30,6 @@ COPY Docker/supervisord.conf /etc/supervisord.conf
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 USER $USERNAME
 
-# gunicorn:5000
 # nginx:8000
 EXPOSE 8000
 ENTRYPOINT ["supervisord", "-c", "/etc/supervisord.conf"]
