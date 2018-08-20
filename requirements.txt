@@ -1,0 +1,5 @@
+websocket-client==0.49.0
+Flask==1.0.2
+flasgger==0.9.0
+Flask-Cors==3.0.6
+psycopg2==2.7.5
