@@ -102,3 +102,8 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# Unignore TradingView stuff
+!app/static/charting_library/*
+!app/static/datafeeds/*
+
